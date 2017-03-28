@@ -6,7 +6,7 @@ import { AppRegistry,
          Stylesheet,
          View } from 'react-native';
 
-import api from './utilities/api';
+import api from './utilities/api'; //location of file where API connection is made
 
 class APIExample extends Component {
 constructor(props){
@@ -19,9 +19,11 @@ constructor(props){
 }
 
  componentWillMount(){
-   api.getRovers().then((res) => {
+   
+   api.getRovers().then((res) => { 
      this.setState({
-       rovers:res.rovers,
+       //store result data in rovers and roverName states
+       rovers:res.rovers, 
        roverName: res.rovers[0].name
      })
    });
